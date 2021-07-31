@@ -1,0 +1,17 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" type="text/css">
+</head><body>
+<h1>input-multi-select tag</h1>
+
+<script type="module" src="./input-multi-select.js"></script>
+<input-multi-select id="sel" options='{ "焼きそば 300円": 1, "たこ焼き 150円": 2, "炭酸水 100円": 3 }'></input-multi-select>
+
+<br><br>
+
+<textarea id="ta"></textarea>
+
+<script type="module">
+sel.onchange = () => {
+  ta.value = sel.value;
+};
+</script>
