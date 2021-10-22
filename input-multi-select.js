@@ -9,10 +9,11 @@ const create = (tag, parent) => {
 class InputMultiSelect extends HTMLElement {
   constructor(map) {
     super();
-    const json = this.getAttribute("options");
-    if (json) {
-      map = JSON.parse(json);
-    }
+    /*
+    this.style.display = "grid";
+    this.style.gridTemplateColumns = "1fr";
+    this.style.rowGap = "0.2em";
+    */
     const addRow = () => {
       const sel = create("select", this);
       const opt = create("option", sel);
@@ -33,16 +34,18 @@ class InputMultiSelect extends HTMLElement {
             addRow();
           }
         }
-        this.change();
+        //this.change();
       };
     };
     addRow();
   }
+  /*
   change() {
     if (this.onchange) {
       this.onchange();
     }
   }
+  */
   get value() {
     const res = [];
     for (let i = 0; i < this.childNodes.length - 1; i++) {
@@ -56,3 +59,5 @@ class InputMultiSelect extends HTMLElement {
 }
 
 customElements.define("input-multi-select", InputMultiSelect);
+
+export { InputMultiSelect };
