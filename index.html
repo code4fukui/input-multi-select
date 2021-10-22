@@ -9,9 +9,13 @@
 <br><br>
 
 <textarea id="ta"></textarea>
+<button id=btn>set values 1,2</button>
 
 <script type="module">
 sel.onchange = () => {
   ta.value = sel.value;
+};
+btn.onclick = () => {
+  sel.value = [1,2];
 };
 </script>
