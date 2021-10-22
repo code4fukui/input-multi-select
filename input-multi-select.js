@@ -9,6 +9,10 @@ const create = (tag, parent) => {
 class InputMultiSelect extends HTMLElement {
   constructor(map) {
     super();
+
+    if (this.getAttribute("options")) {
+      map = JSON.parse(this.getAttribute("options"));
+    }
     /*
     this.style.display = "grid";
     this.style.gridTemplateColumns = "1fr";
