@@ -22,6 +22,19 @@ class InputMultiSelect extends HTMLElement {
   }
   addRow(val) {
     const map = this.map;
+    if (val != undefined) {
+      let flg = false;
+      for (const name in map) {
+        if (val == map[name]) {
+          flg = true;
+          break;
+        }
+      }
+      if (!flg) {
+        return false;
+      }
+    }
+
     const sel = create("select", this);
     const opt = create("option", sel);
     opt.textContent = "-";
@@ -46,6 +59,7 @@ class InputMultiSelect extends HTMLElement {
       }
       //this.change();
     };
+    return true;
   };
 /*
   change() {

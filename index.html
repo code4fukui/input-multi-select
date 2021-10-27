@@ -10,6 +10,7 @@
 
 <textarea id="ta"></textarea>
 <button id=btn>set values 1,2</button>
+<button id=btnerr>set values 1,200</button>
 
 <script type="module">
 sel.onchange = () => {
@@ -17,5 +18,8 @@ sel.onchange = () => {
 };
 btn.onclick = () => {
   sel.value = [1,2];
+};
+btnerr.onclick = () => {
+  sel.value = [1,200];
 };
 </script>
